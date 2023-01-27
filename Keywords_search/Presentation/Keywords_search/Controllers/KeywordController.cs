@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using KS_Business_Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Keywords_search.Controllers
@@ -8,7 +9,13 @@ namespace Keywords_search.Controllers
         // GET: KeywordController
         public ActionResult Index()
         {
-            return View();
+            var keyword = new List<Keyword_Model>();
+            keyword.Add(new Keyword_Model { id = 1, keywords = "youtube" });
+            keyword.Add(new Keyword_Model { id = 2, keywords = "youtube search" });
+            keyword.Add(new Keyword_Model { id = 3, keywords = "youtube topic" });
+            keyword.Add(new Keyword_Model { id = 4, keywords = "youtube keywords" });
+
+            return View(keyword);
         }
 
         // GET: KeywordController/Details/5
